@@ -13,12 +13,8 @@ public class Avengers implements Comparable<Avengers>{
         PagoMensual = pagoMensual;
         /*this.peso = peso;
         this.ciudadRecep = ciudadRecep;
-        this.cedulaRecep = cedulaRecep;
-        this.ciudadEnte = ciudadEnte;*/
-    }
-
-    public Avengers() {
-
+        this.cedulaRecep = cedulaRecep;                 //con estos el programa no corre, se me ocurre hacer otra
+        this.ciudadEnte = ciudadEnte;*/                 //capa de negocio con estos porque los necesito
     }
 
     public String getID() {
@@ -79,6 +75,16 @@ public class Avengers implements Comparable<Avengers>{
                 " PagoMensual="      + PagoMensual +"\n"     +
                 " AporteMensual="    + AporteMensual + "\n"  +
                 " ImpuestoGobierno=" + ImpuestoGobierno      ;
+
+        /*if (PagoMensual * 12 <= 50000){
+            ImpuestoGobierno = PagoMensual;
+        } else if (PagoMensual * 12 > 50000 || PagoMensual * 12 <= 100000){
+            ImpuestoGobierno = (PagoMensual - 5000) * 0.1;
+        } else if (PagoMensual * 12 > 100000|| PagoMensual * 12 <= 200000){     //este prb tmb este mal pero nidea
+            ImpuestoGobierno = (PagoMensual - 10000) * 0.2;
+        } else if (PagoMensual * 12 > 200000){
+            ImpuestoGobierno = (PagoMensual - 20000) * 0.3;
+        }*/
     }
 
     @Override
@@ -92,7 +98,8 @@ public class Avengers implements Comparable<Avengers>{
             ImpuestoGobierno = 0;
         } else if (PagoMensual * 12 > 50000 || PagoMensual * 12 <= 100000){
             impuesto = (PagoMensual - 5000) * 0.1;
-        } else if (PagoMensual * 12 > 100000|| PagoMensual * 12 <= 200000){
+        } else if (PagoMensual * 12 > 100000|| PagoMensual * 12 <= 200000){         //prob este mal pero como no corro
+                                                                                    //el programa no lose
             impuesto = (PagoMensual - 10000) * 0.2;
         } else if (PagoMensual * 12 > 200000){
             impuesto = (PagoMensual - 20000) * 0.3;

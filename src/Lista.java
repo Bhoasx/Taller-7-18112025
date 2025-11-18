@@ -15,10 +15,6 @@ public class Lista extends Exception {
         this.lista = lista;
     }
 
-    /*public void agregarAvenger(Avengers avenger) {
-        listado.add(avenger);
-    }*/
-
     public void add(String id, String nombre, int pagoMensual) throws Exception {
         lista.add(new Avengers(id, nombre, pagoMensual));
     }
@@ -27,4 +23,28 @@ public class Lista extends Exception {
         return new ArrayList<Avengers>(lista);
     }
 
+    public int busquedaBin(int NivelPeligro) throws Exception{
+        int inicio = 0;
+        int fin = lista.size() - 1;
+        while (inicio <= fin){
+            int medio = inicio + (fin - inicio) / 2;
+            if (NivelPeligro == lista.get(medio).getNivelPeligro()) {
+                return medio;
+            } else if (NivelPeligro > lista.get(medio).getNivelPeligro()) {         // este me la genero copilot
+                inicio = medio + 1;
+            } else {
+                fin = medio - 1;
+            }
+        }
+        return -1;
+    }
+
+    public int busquedaSecuencial(int NivelPeligro) throws Exception{
+        for (int i = 0; i < lista.size(); i++){
+            if (lista.get(i).getNivelPeligro() == NivelPeligro){
+                return i;
+            }
+        }
+        return -1;
+    }
 }
