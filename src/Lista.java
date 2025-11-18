@@ -1,7 +1,7 @@
 import java.util.ArrayList;
 import java.util.List;
 
-public class Lista extends Exception {
+public class Lista {
     private List<Avengers> lista;
 
     public Lista(){
@@ -15,7 +15,7 @@ public class Lista extends Exception {
         this.lista = lista;
     }
 
-    public void add(String id, String nombre, int pagoMensual) throws Exception {
+    public void add(String id, String nombre, int pagoMensual) {
         lista.add(new Avengers(id, nombre, pagoMensual));
     }
 
@@ -23,7 +23,7 @@ public class Lista extends Exception {
         return new ArrayList<Avengers>(lista);
     }
 
-    public int busquedaBin(int NivelPeligro) throws Exception{
+    public int busquedaBin(int NivelPeligro){
         int inicio = 0;
         int fin = lista.size() - 1;
         while (inicio <= fin){
@@ -39,7 +39,7 @@ public class Lista extends Exception {
         return -1;
     }
 
-    public int busquedaSecuencial(int NivelPeligro) throws Exception{
+    public int busquedaSecuencial(int NivelPeligro){
         for (int i = 0; i < lista.size(); i++){
             if (lista.get(i).getNivelPeligro() == NivelPeligro){
                 return i;

@@ -106,4 +106,10 @@ public class Avengers implements Comparable<Avengers>{
         }
         return PagoMensual * impuesto;
     }
+
+    public static void main(String[] args) {
+        Avengers avenger1 = new Avengers("1", "Ironman", 15000);
+        avenger1.Impuesto();
+
+    }
 }
